@@ -7,16 +7,36 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 import static spark.Spark.*;
-
+/***
+ * Clase que contiene el formulario y el balanceador de cargas
+ */
 public class RoundRobin {
+    /***
+     * atriuto que contiene los diferentes servers de los logServices
+     */
     private static final String[] servers = new String[]{"http://10.0.0.5:6000/log?v=", "http://10.0.0.6:6000/log?v=", "http://10.0.0.7:6000/log?v="};
+    /***
+     * atributo que contiene el index del servidor actual
+     */
     private static int currentServer = 0;
+    /***
+     * atributo requerido para la conexion
+     */
     private static final String USER_AGENT = "Mozilla/5.0";
+    /***
+     * funcion main que maneja los request que le llegan por el endpoint log, y vacio
+     * @param args son los argumentos que recibe
+     */
     public static void main(String[] args) {
         port(getPort());
         get("/", (req, res) -> getIndex());
         get("/log", (req, res) -> makeRequest(req.queryParams("v")));
     }
+    /***
+     * Función que hace las peticiones al logServices
+     * @param log es la cadena simple que se va a guardar
+     * @return String
+     */
     private static String makeRequest(String log) throws IOException {
         URL obj = new URL(getServer()+log);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
@@ -36,7 +56,10 @@ public class RoundRobin {
             return "GET request not worked";
         }
     }
-
+    /***
+     * funcion que nos traer el server actual y cambia de servidor
+     * @return String el servidor actual
+     */
     private static synchronized String getServer() {
         if (currentServer >= servers.length) {
             currentServer = 0;
@@ -45,7 +68,10 @@ public class RoundRobin {
         currentServer++;
         return nextServer;
     }
-
+    /***
+     * funcion que nos trae la pagina web
+     * @return String el codigo html y javascript para el formulario
+     */
     private static String getIndex(){
         return  """
                 <!DOCTYPE html>
@@ -80,7 +106,10 @@ public class RoundRobin {
                 </html>
                 """;
     }
-
+    /***
+     * funcion main que maneja los request que le llegan por el endpoint log
+     * @return int del port que se comunicara spark para funcionar
+     */
     private static int getPort() {
         if (System.getenv("PORT") != null) {
             return Integer.parseInt(System.getenv("PORT"));
