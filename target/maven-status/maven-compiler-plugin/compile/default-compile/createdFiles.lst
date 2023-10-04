@@ -1,0 +1,3 @@
+edu\eci\co\logservices\LogService.class
+edu\eci\co\roundrobin\RoundRobin.class
+edu\eci\co\logservices\MongoRepositori.class
