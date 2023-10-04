@@ -1,7 +1,7 @@
 ## LabArep6
 En este Lboratorio se utilizo Docker para correr un servicio de logs que se conectan a mongo debe y un servidor web con un balanceador de carga que envia el log a los diferentes instancias de logservices
 
-## Prerrequisitos
+### Prerrequisitos
 * Git
 * Java
 * Maven
@@ -38,13 +38,13 @@ como se puede observar los servicios tambien sirven con numeros y con caracteres
 
 ![image](https://github.com/santiagoOsp01/LabArep6/assets/111186366/e6a62c8d-553d-4767-8640-8b5c04d964db)
 
-## Diseño
+### Diseño
 
 Para este laboratorio se realizo todo desde un proyecto y se crearon 2 archivos de dockerfile que son con los que vamos a construir los servicios, para esto tenemos el archivo de docker-compose
 que es el que crea la instancia de roundRobin las 3 de LogServices y la instancia de mongo db, y para que corra nuestro proyecto como ya mencionamos solo toca despues de tener una
 copia del repositorio local y solo correr el dockercompose
 
-## Arquitectura
+### Arquitectura
 
 La arquitectura se puede evidenciar en la siguiente imagen
 
@@ -61,7 +61,7 @@ ahorra que ya tenemos nuestro repositorio ahorra solo toca iniciar y desplegar n
 el unico puerto que debemos abrir es el de roundrobin para poder haceder a nuestra pagina web, y tambien descargar git y docker para despues correrlo desde esta maquina
 y ver el funcionamiento de nuestros servicios
 
-## Video
+### Video
 
 https://github.com/santiagoOsp01/LabArep6/assets/111186366/b829396e-7500-4161-8aa5-3e9f983ce919
 
