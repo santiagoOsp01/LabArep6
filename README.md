@@ -1,5 +1,5 @@
-## LabArep5
-En este Lboratorio se utilizo Docker para crear imagenes y usarla en contenedores, además se implemento un pequeño servicio REST de bono para el parcial.
+## LabArep6
+En este Lboratorio se utilizo Docker para correr un servicio de logs que se conectan a mongo debe y un servidor web con un balanceador de carga que envia el log a los diferentes instancias de logservices
 
 ## Prerrequisitos
 * Git 
@@ -12,7 +12,7 @@ En este Lboratorio se utilizo Docker para crear imagenes y usarla en contenedore
 Lo primero será traer del repositorio remoto el proyecto a la máquina local, para esto ejecutamos el siguiente comando por medio de consola.
 
 ```
-git clone https://github.com/santiagoOsp01/LabArep5.git
+git clone https://github.com/santiagoOsp01/LabArep6.git
 ```
 Esto creará un directorio nuevo donde accederemos y ejecutaremos el siguiente comando.
 
