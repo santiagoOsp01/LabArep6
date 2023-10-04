@@ -25,7 +25,6 @@ esto ya nos pondra a contener todos nuestro servicios pero para verificarlo corr
 docker ps
 ```
 y nos deberia de aparecer lo siguiente
-<<<<<<< HEAD
 
 ![image](https://github.com/santiagoOsp01/LabArep6/assets/111186366/33560003-ee6b-4c03-82ba-76783fc81243)
 
