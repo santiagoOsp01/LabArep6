@@ -2,13 +2,46 @@ version: '2'
 
 
 services:
-  web:
+  roundrobin:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: web
+    container_name: roundrobin
     ports:
-      - "8087:6000"
+      - "35000:6000"
+    networks:
+      arepnet:
+        ipv4_address: 10.0.0.4
+  logs1:
+    build:
+      context: .
+      dockerfile: Dockerfile1
+    container_name: logservice1
+    ports:
+      - "35001:6000"
+    networks:
+      arepnet:
+        ipv4_address: 10.0.0.5
+  logs2:
+    build:
+      context: .
+      dockerfile: Dockerfile1
+    container_name: logservice2
+    ports:
+      - "35002:6000"
+    networks:
+      arepnet:
+        ipv4_address: 10.0.0.6
+  logs3:
+    build:
+      context: .
+      dockerfile: Dockerfile1
+    container_name: logservices3
+    ports:
+      - "35003:6000"
+    networks:
+      arepnet:
+        ipv4_address: 10.0.0.7
   db:
     image: mongo:3.6.1
     container_name: db
@@ -16,9 +49,19 @@ services:
       - mongodb:/data/db
       - mongodb_config:/data/configdb
     ports:
-      - 27017:27017
+      - "27017:27017"
+    networks:
+      arepnet:
+        ipv4_address: 10.0.0.8
     command: mongod
 
+networks:
+  arepnet:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.0.0.1/24
+          gateway: 10.0.0.1
 volumes:
   mongodb:
   mongodb_config:

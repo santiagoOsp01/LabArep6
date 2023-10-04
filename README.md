@@ -21,19 +21,19 @@ mvn package
 ```
 para construir nuestro proyecto 
 
-y ya si lo queremos ejecutar desde intelij sin terminal corremos el main de la siguiente clase edu.eci.co.SparkWebServer el metodo main
+y ya si lo queremos ejecutar desde intelij sin terminal corremos el main de la siguiente clase edu.eci.co.roundrobin.RoundRobin el metodo main
 
 ![image](https://github.com/santiagoOsp01/LabArep5/assets/111186366/dee091b1-4680-459a-a1c8-de66829b21bd)
 
 y desde la terminal podemos ejecutarlo con el siguiente comando, si eres windows 
 
 ```
-java -cp "target/classes;target/dependency/*" edu.eci.co.SparkWebServer
+java -cp "target/classes;target/dependency/*" edu.eci.co.roundrobin.RoundRobin
 ```
 si eres unix
 
 ```
-java -cp "target/classes:target/dependency/*" edu.eci.co.SparkWebServer
+java -cp "target/classes:target/dependency/*" edu.eci.co.roundrobin.RoundRobin
 ```
 ### Corriendo con Docker
 
