@@ -38,6 +38,11 @@ como se puede observar los servicios tambien sirven con numeros y con caracteres
 
 ![image](https://github.com/santiagoOsp01/LabArep6/assets/111186366/e6a62c8d-553d-4767-8640-8b5c04d964db)
 
+y en el docker de nuestra computadora local se ve asi
+
+![image](https://github.com/santiagoOsp01/LabArep6/assets/111186366/f22c7d5d-6316-4e4e-8565-51f71c1498a5)
+
+
 ### Diseño
 
 Para este laboratorio se realizo todo desde un proyecto y se crearon 2 archivos de dockerfile que son con los que vamos a construir los servicios, para esto tenemos el archivo de docker-compose
