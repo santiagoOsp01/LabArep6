@@ -14,70 +14,60 @@ Lo primero será traer del repositorio remoto el proyecto a la máquina local, p
 ```
 git clone https://github.com/santiagoOsp01/LabArep6.git
 ```
-Esto creará un directorio nuevo donde accederemos y ejecutaremos el siguiente comando.
+Esto creará un directorio nuevo donde accederemos y ejecutaremos el siguiente comando desde la terminal.
 
 ```
-mvn package
+docker-compose up -d
 ```
-para construir nuestro proyecto 
-
-y ya si lo queremos ejecutar desde intelij sin terminal corremos el main de la siguiente clase edu.eci.co.roundrobin.RoundRobin el metodo main
-
-![image](https://github.com/santiagoOsp01/LabArep5/assets/111186366/dee091b1-4680-459a-a1c8-de66829b21bd)
-
-y desde la terminal podemos ejecutarlo con el siguiente comando, si eres windows 
+esto ya nos pondra a contener todos nuestro servicios pero para verificarlo corremos el siguiente comando
 
 ```
-java -cp "target/classes;target/dependency/*" edu.eci.co.roundrobin.RoundRobin
+docker ps
 ```
-si eres unix
+y nos deberia de aparecer lo siguiente
 
-```
-java -cp "target/classes:target/dependency/*" edu.eci.co.roundrobin.RoundRobin
-```
-### Corriendo con Docker
+![image](https://github.com/santiagoOsp01/LabArep6/assets/111186366/33560003-ee6b-4c03-82ba-76783fc81243)
 
-En el siguiente repositorio https://hub.docker.com/repository/docker/santiagoosp01/labarep5/general, se econtrará la imagen para poder ejecutar el proyecto en Docker.
-
-Para poder ejecutar dicha imagen, ingrese el siguiente comando:
-
-```
-docker run -d -p 40001:6000 --name sparkweb santiagoosp01/labarep5:latest
-```
 ### pruebas 
+ya despues con un navegador entras al siguiente link http://localhost:35000/ y ahi estaran corriendo nuestro formulario para 
+que pruebes la funcionalidad de los servicios como se puede ver a continuacion
 
-![image](https://github.com/santiagoOsp01/LabArep5/assets/111186366/a44b15af-df61-4fb1-888c-89065cf5ad70)
-aqui ejecutamos el comando
+![image](https://github.com/santiagoOsp01/LabArep6/assets/111186366/2feddafe-cbfe-44d2-a828-6bbda2edd203)
 
-![image](https://github.com/santiagoOsp01/LabArep5/assets/111186366/cd2d486d-19e6-4410-b135-98efda6f2923)
+como se puede observar los servicios tambien sirven con numeros y con caracteres especiales pero si le metemos espacios se rompe nuestros servicios, porque en este laboratorio se trabajo con cadena continuas que no tenga espacio
 
-vamos como se creo en docker
+![image](https://github.com/santiagoOsp01/LabArep6/assets/111186366/e6a62c8d-553d-4767-8640-8b5c04d964db)
 
-vamos al siguiente link para probar las diferentes funciones del bono 
+## Documentacion
 
-http://localhost:40001/index.html
+la documentación del proyecto solo debes correr el siguiente comando en el directorio del proyecto desde una terminal 
 
-![image](https://github.com/santiagoOsp01/LabArep5/assets/111186366/8ed5a0ae-92bb-47e7-aaa3-c6d6d9690fad)
+```
+mvn javadoc:javadoc
+```
 
-aqui se pueden ver que se ejecutan todas las funciones que nos piden del bono
-![image](https://github.com/santiagoOsp01/LabArep5/assets/111186366/ee0f0dab-f3f2-465c-bf36-3d83d57ef2b4)
+Y en la siguiente ruta encontrarás el archivo index.html en donde si lo abres desde el navegador podras ver toda la documentación
 
-## Construido con
+```
+./target/site/apidocs
+```
+
+### Construido con
 
 * [Maven](https://maven.apache.org/) - Administrador de dependencias
 
-## Version
+### Version
 
 1.0-SNAPSHOT
 
-## Autores
+### Autores
 Santiago Ospina Mejia
 
-## Licencia
+### Licencia
 
 GNU General Public License family
 
-## Agradecimientos
+### Agradecimientos
 
 * Luis Daniel Benavides Navarro
 
