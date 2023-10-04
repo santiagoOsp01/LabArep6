@@ -63,6 +63,8 @@ y ver el funcionamiento de nuestros servicios
 
 ## Video
 
+https://github.com/santiagoOsp01/LabArep6/assets/111186366/b829396e-7500-4161-8aa5-3e9f983ce919
+
 ### Construido con
 
 * [Maven](https://maven.apache.org/) - Administrador de dependencias
