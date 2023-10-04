@@ -39,49 +39,31 @@ como se puede observar los servicios tambien sirven con numeros y con caracteres
 
 ![image](https://github.com/santiagoOsp01/LabArep6/assets/111186366/e6a62c8d-553d-4767-8640-8b5c04d964db)
 
-## Documentacion
+## Diseño
 
-la documentación del proyecto solo debes correr el siguiente comando en el directorio del proyecto desde una terminal
+Para este laboratorio se realizo todo desde un proyecto y se crearon 2 archivos de dockerfile que son con los que vamos a construir los servicios, para esto tenemos el archivo de docker-compose
+que es el que crea la instancia de roundRobin las 3 de LogServices y la instancia de mongo db, y para que corra nuestro proyecto como ya mencionamos solo toca despues de tener una
+copia del repositorio local y solo correr el dockercompose
 
-```
-mvn javadoc:javadoc
-```
+## Arquitectura
 
-Y en la siguiente ruta encontrarás el archivo index.html en donde si lo abres desde el navegador podras ver toda la documentación
+La arquitectura se puede evidenciar en la siguiente imagen
 
-```
-./target/site/apidocs
-```
+![image](https://github.com/santiagoOsp01/LabArep6/assets/111186366/b8971a37-09e4-4576-83ca-03a600e55dee)
 
-=======
+como se puede ver tenemos un roundrobin ,3 instancia de logServices y una instancia de base de datos mongodb
+el roundrobin: es donde esta la pagina web quemada en el comido y el balanceador de cargas que apunta a los diferentes contenedores de logservices
+logServices: esto los que se concetan a la base de datos los logs con la fecha de creacion
+mongodb: es nuestra base de datos que se conectan los logServices
 
-![image](https://github.com/santiagoOsp01/LabArep6/assets/111186366/33560003-ee6b-4c03-82ba-76783fc81243)
+### Despliegue
 
-### pruebas 
-ya despues con un navegador entras al siguiente link http://localhost:35000/ y ahi estaran corriendo nuestro formulario para 
-que pruebes la funcionalidad de los servicios como se puede ver a continuacion
+ahorra que ya tenemos nuestro repositorio ahorra solo toca iniciar y desplegar na maquina EC2 y abrir los puertos necesarios para que funcionen,
+el unico puerto que debemos abrir es el de roundrobin para poder haceder a nuestra pagina web, y tambien descargar git y docker para despues correrlo desde esta maquina
+y ver el funcionamiento de nuestros servicios
 
-![image](https://github.com/santiagoOsp01/LabArep6/assets/111186366/2feddafe-cbfe-44d2-a828-6bbda2edd203)
+## Video
 
-como se puede observar los servicios tambien sirven con numeros y con caracteres especiales pero si le metemos espacios se rompe nuestros servicios, porque en este laboratorio se trabajo con cadena continuas que no tenga espacio
-
-![image](https://github.com/santiagoOsp01/LabArep6/assets/111186366/e6a62c8d-553d-4767-8640-8b5c04d964db)
-
-## Documentacion
-
-la documentación del proyecto solo debes correr el siguiente comando en el directorio del proyecto desde una terminal 
-
-```
-mvn javadoc:javadoc
-```
-
-Y en la siguiente ruta encontrarás el archivo index.html en donde si lo abres desde el navegador podras ver toda la documentación
-
-```
-./target/site/apidocs
-```
-
->>>>>>> a5e5ed721ba14b49e858477b96aad1e5d672f1c9
 ### Construido con
 
 * [Maven](https://maven.apache.org/) - Administrador de dependencias
@@ -100,5 +82,6 @@ GNU General Public License family
 ### Agradecimientos
 
 * Luis Daniel Benavides Navarro
+* jorge nuestro monitor
 
 
